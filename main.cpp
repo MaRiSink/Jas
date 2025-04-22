@@ -1,16 +1,137 @@
 #include <iostream>
 #include <windows.h>
+#include <stdio.h>
+#include <conio.h>
 
 using namespace std;
 
-void paradise()
+
+int loading()
 {
+
+     HANDLE console_color;
+
+    console_color = GetStdHandle(STD_OUTPUT_HANDLE);
+
+ int tabload[3][20] =
+  {
+      {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+      {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+      {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+  };
+  for (int i = 0; i < 60; ++i )
+    {
+        if ( i % 20 == 0)
+    {
+        cout << endl;
+    }
+    switch (tabload[0][i])
+    {
+case 0:
+    SetConsoleTextAttribute(console_color, 119);
+            cout << tabload[0][i] ;
+            break;
+case 1:
+    SetConsoleTextAttribute(console_color, 51);
+
+            cout << tabload[0][i];
+            break;
+            default:
+            SetConsoleTextAttribute(console_color, 68);
+            cout << tabload[0][i];
+    }
+    }
+    cout<<endl;
+    SetConsoleTextAttribute(console_color, 12);
+
+    return 0;
+
+
+}
+
+void paradise_only()
+{
+    const int wysokosc = 10;
+    const int szyrokosc = 10;
+
+   int tab[10][10] =
+   {
+       {1,1,1,1,0,0,1,1,1,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,0,0,0,0,0,1},
+       {1,0,0,0,2,0,0,0,0,1},
+       {1,1,1,1,1,1,1,1,1,1}
+
+    };
+
+
+    HANDLE console_color;
+
+    console_color = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    for (int i = 0; i < 100; ++i )
+    {
+        if ( i % 10 == 0)
+    {
+        cout << endl;
+    }
+    switch (tab[0][i])
+    {
+case 0:
+    SetConsoleTextAttribute(console_color, 119);
+            cout << tab[0][i] ;
+            break;
+case 1:
+    SetConsoleTextAttribute(console_color, 51);
+
+            cout << tab[0][i];
+            break;
+            default:
+            SetConsoleTextAttribute(console_color, 68);
+            cout << tab[0][i];
+    }
+    }
+    cout<<endl;
+    SetConsoleTextAttribute(console_color, 12);
+
+     char movement_player;
+     cin >> movement_player;
+
+     int y_of_player = 0;
+     int x_of_player = 0;
+
+     switch(movement_player)
+         {
+         case 'w':
+            --y_of_player;
+            break;
+
+         case 's':
+            ++y_of_player;
+            break;
+
+         case 'a':
+            --x_of_player;
+            break;
+
+         case 'd':
+            ++x_of_player;
+            break;
+         }
+         system("cls");
+
+
 
 }
 
 void death_prisoner()
 {
-    cout << "  So you're dead... You don't exist anymore. Stop." << endl;
+    cout << "  So you're dead... You don't exist anymore. Wait a second..." << endl;
      cout << " You see a light and walk towards it, adjusting your prison uniform." << endl;
     cout << " Turning around, you see a huge shell casing rolling towards you, " << endl;
     cout << "which is clearly a good motivator to go faster. Then even faster." << endl;
@@ -143,67 +264,77 @@ void death_dantist()
 }
 
 
+void draw(int tabload[3][20])
+{
+    HANDLE std_out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    COORD coord;
+
+    //system("cls");
+    coord.X = 0;
+    coord.Y = 0;
+    SetConsoleCursorPosition(std_out, coord);
+
+
+    for (int i=0; i<3; i++)
+    {
+        for (int j=0; j<20; j++)
+        {
+            SetConsoleTextAttribute(std_out, tabload[i][j]);
+            cout << " ";
+        }
+        cout << endl;
+    }
+
+    SetConsoleTextAttribute(std_out, 0);
+ }
+
 
 int main()
 {
-    HANDLE console_kolor;
-
-   int tab[10][10] =
-   {
-       {1,1,1,1,0,0,1,1,1,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,0,0,0,0,0,1},
-       {1,0,0,0,2,0,0,0,0,1},
-       {1,1,1,1,1,1,1,1,1,1}
-
+    int pos = 1;            // Starting position
+    int tabload[3][20] =
+    {
+        {51, 51, 51, 51, 51, 51, 51, 51, 51,51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51 },
+        {51, 68, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 51},
+        {51, 51, 51, 51, 51, 51, 51, 51, 51,51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51 }
     };
 
+    // Initial screen
+    draw(tabload);
 
-    HANDLE h;
+    for (;;)
+    {
+        char ch = getch();
 
-    h = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    for (int i = 0; i < 100; i++ )
-    {
-        if ( i % 10 == 0)
-    {
-        cout << endl;
-    }
-    switch (tab[0][i])
-    {
-case 0:
-    SetConsoleTextAttribute(h, 42);
-            cout << tab[0][i] ;
+        // Exit
+        if (27 == ch)
             break;
-case 1:
-    SetConsoleTextAttribute(h, 48);
-            cout << tab[0][i];
-            break;
-            default:
-            SetConsoleTextAttribute(h, 47);
-            cout << tab[0][i];
-    }
 
-        /*if (tab[0][i] == 1)
+        // Move right (convert input to uppercase)
+        if ('D' == toupper(ch))
         {
-           SetConsoleTextAttribute(h, 42);
-            cout << tab[0][i] ;
-
+            if (pos >= 18)
+                continue;
+            tabload[1][pos] = 119;
+            pos++;
+            tabload[1][pos] = 68;
         }
-        if (tab[0][i] == 0)
-        {
-            SetConsoleTextAttribute(h, 48);
-            cout << tab[0][i];
 
-        }*/
+        // Move left
+        if ('A' == toupper(ch))
+        {
+            if (pos <= 1)
+                continue;
+            tabload[1][pos] = 119;
+            pos--;
+            tabload[1][pos] = 68;
+        }
+
+        draw(tabload);
     }
-    cout<<endl;
-   // SetConsoleTextAttribute(h, 0);
+
+    return 0;
 }
 
 
