@@ -19,7 +19,7 @@ void death_prisoner()
     cout << "which is clearly a good motivator to go faster. Then even faster." << endl;
     cout << " And now you're running, after which you find yourself in a white corridor, " << endl;
     cout << "after which you see something that looks like a polish uzhond. " << endl;
-    cout << " You take a ticket and have to wait..." << endl;
+    cout << " You take a ticket and have to wait..." << endl; //loading
 
 }
 
@@ -33,7 +33,7 @@ void death_old_age() //domohozajka; pisatel; wrach-detektiwnyj
     cout << " Without hurrying, you can look around, admire the beauty of these places." << endl;
     cout << " After which you are led to the building of the polish uzhond." << endl;
     cout << " Since you are a pensioner and have lived a good, correct life, you are allowed to skip the line. " << endl;
-    cout << " Now your task is to choose where to go" << endl;
+    cout << " Now your task is to go and see what will happen next" << endl;
 
 }
 
@@ -78,7 +78,7 @@ void death_uzhond()
     cout << endl;
     cout << " Tap to skip time" << endl;
 
-    cout << " ETERNAL WAITING" << endl;
+    cout << " ETERNAL WAITING" << endl; //loading
 }
 
 void death_librian()
@@ -89,10 +89,10 @@ void death_librian()
     cout << " But there's one problem... Everywhere are -one second break books-; -one second break- books and more books." << endl;
     cout << " Finally, you reach your desk, where lies... OH MIRACLE!" << endl;
     cout << "  Another book.  " << endl;
-    cout << " It says -Your Death.- When you open it, you were sucked inside. " << endl;
+    cout << " It says 'Your Death.' When you open it, you were sucked inside. " << endl;
     cout << " You find yourself in a uzhond, wait in line, and then you get it: a ticket to heaven." << endl;
     cout << " A creaky voice says: " << endl;
-    cout << " - Go straight ahead and enter this corridor. That's where you need to go." << endl;
+    cout << "    - Go straight ahead and enter this corridor. That's where you need to go." << endl;
     cout << " Finally, silence…." << endl;
 }
 
@@ -108,88 +108,89 @@ void death_historical()
     cout << " So, this Uber Business Class taxi finally got you somewhere..." << endl;
     cout << " The white building of the office where you met your history group. " << endl;
     cout << " Then the accounting department..." << endl;
-    cout << " A death certificate and directions to where you'd better go." << endl;
+    cout << " A death certificate and direction to where you'd better go." << endl;
 }
 
 void death_0_kidneys()
 {
-    cout << "  Drying….Strong…" << endl;
+    cout << "  Drying... Strong..." << endl;
     cout << " You woke up in the middle of the desert and it seemed like you had been wandering for some time. " << endl;
     cout << " Tired and clearly irritated. Soon the withdrawal began. " << endl;
     cout << " Strong and creating a sour taste of aggression in your mouth. " << endl;
     cout << " You wanted to drink, but at the same time it seemed like you couldn’t sober up." << endl;
     cout << " Here it is. A building in the middle of the desert. Uzhond. " << endl;
     cout << " You crawled up the stairs, but then a guard stopped you, who said in a deep voice:" << endl;
-    cout << "  -You have no right to enter a government institution while drunk." << endl;
+    cout << "     -You have no right to enter a government institution while drunk." << endl;
     cout << " You tried to object, but they wouldn't let you in. Drunk, you were forced to wander the desert for eternity... " << endl;
     cout << " Without a goal... Without alcohol, but forever drunk... Without kidneys..." << endl;
     cout << endl;
-    cout << "   GAME OVER  " << endl;
+    cout << "   GAME OVER :(  " << endl;
 }
 
 void bootle()
 {
-    srand (time(NULL));
+    HANDLE std_out = GetStdHandle(STD_OUTPUT_HANDLE);
 
+    srand(time(NULL));
     int random = rand() % 2;
 
     if (random == 0)
     {
-   HANDLE std_out = GetStdHandle(STD_OUTPUT_HANDLE);
-   int bottleofbear[10][13] =
-    {
-        { 119, 119, 119, 119, 119, 60, 60, 119, 119, 119, 119, 119, 119 },
-        { 119, 119, 119, 119, 119, 65, 65, 119, 119, 119, 119, 119, 119 },
-        { 119, 119, 119, 119, 119, 65, 65, 119, 119, 119, 119, 119, 119 },
-        { 119, 119, 119, 65, 65, 65, 65,  65, 65, 119, 119, 119, 119 },
-        { 119, 119, 119, 46, 65, 65, 65,  65, 46, 119, 119, 119, 119 },
-        { 119, 119, 119, 46, 46, 46,  46, 46, 46, 119, 119, 119, 119 },
-        { 119, 119, 119, 65, 0, 46,  46, 0, 65, 119, 119, 119, 119 },
-        { 119, 119, 119, 65, 65, 46,  46, 65, 65, 119, 119, 119, 119 },
-        { 119, 119, 119, 65, 65, 65,  65, 65, 65, 119, 119, 119, 119 },
-        { 119, 119, 119, 65, 65, 65,  65, 65, 65, 119, 119, 119, 119 }
-    };
+        int bottleofbear[10][13] =
+        {
+            { 119, 119, 119, 119, 119, 60, 60, 119, 119, 119, 119, 119, 119 },
+            { 119, 119, 119, 119, 119, 65, 65, 119, 119, 119, 119, 119, 119 },
+            { 119, 119, 119, 119, 119, 65, 65, 119, 119, 119, 119, 119, 119 },
+            { 119, 119, 119, 65, 65, 65, 65,  65, 65, 119, 119, 119, 119 },
+            { 119, 119, 119, 46, 65, 65, 65,  65, 46, 119, 119, 119, 119 },
+            { 119, 119, 119, 46, 46, 46,  46, 46, 46, 119, 119, 119, 119 },
+            { 119, 119, 119, 65, 0, 46,  46, 0, 65, 119, 119, 119, 119 },
+            { 119, 119, 119, 65, 65, 46,  46, 65, 65, 119, 119, 119, 119 },
+            { 119, 119, 119, 65, 65, 65,  65, 65, 65, 119, 119, 119, 119 },
+            { 119, 119, 119, 65, 65, 65,  65, 65, 65, 119, 119, 119, 119 }
+        };
 
         for (int i=0; i<10; i++)
-    {
-        for (int j=0; j<13; j++)
         {
-            SetConsoleTextAttribute(std_out, bottleofbear[i][j]);
-            cout << " ";
+            for (int j=0; j<13; j++)
+            {
+                SetConsoleTextAttribute(std_out, bottleofbear[i][j]);
+                cout << " ";
+            }
+            cout << endl;
         }
-        cout << endl;
-    }
-    cout <<endl << endl << endl;
-    int bear[6][19] =
-    {
-        {0,65,65,65,0,65,65,65,0,0,65,0,0,65,65,0,0,0,0},
-        {0,65,0,65,0,65,0,0,0,65,0,65,0,65,0,65,0,0,0},
-        {0,65,65,0,0,65,65,65,0,65,65,65,0,65,65,0,0,0,0},
-        {0,65,0,65,0,65,0,0,0,65,0,65,0,65,0,65,0,0,0},
-        {0,65,0,65,0,65,0,0,0,65,0,65,0,65,0,0,65,0,0},
-        {0,65,65,0,0,65,65,65,0,65,0,65,0,65,0,0,65,0,0},
+        cout <<endl << endl << endl;
 
-    };
-       for (int i=0; i<6; i++)
-    {
-        for (int j=0; j<19; j++)
+        int bear[6][19] =
         {
-            SetConsoleTextAttribute(std_out, bear[i][j]);
-            cout << " ";
+            {0,65,65,65,0,65,65,65,0,0,65,0,0,65,65,0,0,0,0},
+            {0,65,0,65,0,65,0,0,0,65,0,65,0,65,0,65,0,0,0},
+            {0,65,65,0,0,65,65,65,0,65,65,65,0,65,65,0,0,0,0},
+            {0,65,0,65,0,65,0,0,0,65,0,65,0,65,0,65,0,0,0},
+            {0,65,0,65,0,65,0,0,0,65,0,65,0,65,0,0,65,0,0},
+            {0,65,65,0,0,65,65,65,0,65,0,65,0,65,0,0,65,0,0},
+
+        };
+
+        for (int i=0; i<6; i++)
+        {
+            for (int j=0; j<19; j++)
+            {
+                SetConsoleTextAttribute(std_out, bear[i][j]);
+                cout << " ";
+            }
+            cout << endl;
         }
-        cout << endl;
-    }
     }
     else
     {
         cout << " ETERNAL WAITING " << endl;
     }
 
-
-
-
-
-    }
+    SetConsoleTextAttribute(std_out, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
+    cout << endl << "Press any key to continue";
+    getch();
+}
 
 
 
@@ -234,7 +235,7 @@ void draw(int tabload[3][20])
         cout << endl;
     }
 
-    SetConsoleTextAttribute(std_out, 0);
+    SetConsoleTextAttribute(std_out, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 }
 
 
@@ -306,11 +307,11 @@ void drawmap(int tabmap[10][10])
         cout << endl;
     }
 
-    SetConsoleTextAttribute(std_out, 0);
+    SetConsoleTextAttribute(std_out, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 }
 
 
-int mapp()
+void mapp()
 {
     int posX = 1;
     int posY = 8;           // Starting position
@@ -363,11 +364,18 @@ int mapp()
         if ('W' == toupper(ch))
         {
             if (posY <= 1)
-                continue;
+            {
+                if ((posX < 4) || (posX > 5))
+                    continue;
+
+                if (0 == posY)
+                    break;
+            }
+
             tabmap[posY][posX] = 119;
             posY--;
             tabmap[posY][posX] = 68;
-        }
+        } // if ('W' == toupper(ch))
 
         // Move down
         if ('S' == toupper(ch))
@@ -427,7 +435,7 @@ int main()
         SetConsoleCursorPosition(std_out, coord);
 
         cout << " LOADING... " << endl;
-       loading();
+        loading();
 
         break;
 
@@ -452,7 +460,7 @@ int main()
     case 'e':
         death_pretty_kitties();
         Sleep (3000);
-        mapp;
+        mapp();
         break;
 
     case 'f':
@@ -469,7 +477,7 @@ int main()
 
     case 'h':
         death_uzhond();
-         Sleep(3000);
+        Sleep(3000);
         cout << " ETERNAL WAITING " << endl;
 
         coord.X = 20;
@@ -489,7 +497,7 @@ int main()
     case 'j':
         death_historical();
         Sleep(3000);
-        mapp;
+        mapp();
         break;
 
     case 'k':
@@ -503,12 +511,12 @@ int main()
         Sleep(3000);
         mapp();
         break;
+
     default:
         cout << " Try again";
-    }
+    } // switch (answer)
 
-
-
+    system("cls");
 
     return 0;
 }
