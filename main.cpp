@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <fstream>
 
 
 using namespace std;
@@ -224,7 +225,6 @@ void draw(int tabload[3][20])
     coord.Y = 0;
     SetConsoleCursorPosition(std_out, coord);
 
-
     for (int i=0; i<3; i++)
     {
         for (int j=0; j<20; j++)
@@ -251,6 +251,7 @@ void loading()
 
     // Initial screen
     draw(tabload);
+    ofstream IHateLoadings ("LitteOne.txt");
 
     for (;;)
     {
@@ -258,7 +259,10 @@ void loading()
 
         // Exit
         if (27 == ch)
+        {
+         IHateLoadings << endl << "Exit";
             break;
+        }
 
         // Move right (convert input to uppercase)
         if ('D' == toupper(ch))
@@ -268,6 +272,7 @@ void loading()
             tabload[1][pos] = 119;
             pos++;
             tabload[1][pos] = 68;
+            IHateLoadings << 'D' << ' ';
         }
 
         // Move left
@@ -278,6 +283,7 @@ void loading()
             tabload[1][pos] = 119;
             pos--;
             tabload[1][pos] = 68;
+            IHateLoadings << 'A' << ' ';
         }
 
         draw(tabload);
@@ -329,6 +335,8 @@ void mapp()
         {51, 51, 51, 51, 51, 51, 51, 51, 51, 51 }
     };
 
+    ofstream moveitmoveit ("BigOne.txt");
+
     // Initial screen
     drawmap(tabmap);
 
@@ -338,7 +346,10 @@ void mapp()
 
         // Exit
         if (27 == ch)
+        {
+            moveitmoveit << endl << "Exit";
             break;
+        }
 
         // Move right (convert input to uppercase)
         if ('D' == toupper(ch))
@@ -348,6 +359,7 @@ void mapp()
             tabmap[posY][posX] = 119;
             posX++;
             tabmap[posY][posX] = 68;
+            moveitmoveit << 'D' << ' ';
         }
 
         // Move left
@@ -358,6 +370,7 @@ void mapp()
             tabmap[posY][posX] = 119;
             posX--;
             tabmap[posY][posX] = 68;
+            moveitmoveit << 'A' << ' ';
         }
 
         // Move up
@@ -375,6 +388,7 @@ void mapp()
             tabmap[posY][posX] = 119;
             posY--;
             tabmap[posY][posX] = 68;
+            moveitmoveit << 'W' << ' ';
         } // if ('W' == toupper(ch))
 
         // Move down
@@ -385,6 +399,7 @@ void mapp()
             tabmap[posY][posX] = 119;
             posY++;
             tabmap[posY][posX] = 68;
+            moveitmoveit << 'S' << ' ';
         }
 
         drawmap(tabmap);
@@ -422,10 +437,12 @@ int main()
     HANDLE std_out = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD coord;
 
+    ofstream history ("Your end.txt");
 
     switch (answer)
     {
     case 'a':
+        history << "death like a prisoner";
         death_prisoner();
         Sleep(3000);
         cout << " ETERNAL WAITING " << endl;
@@ -440,42 +457,49 @@ int main()
         break;
 
     case 'b':
+        history << "death like a old happy man";
         death_old_age();
         Sleep (3000);
         mapp();
         break;
 
-    case 'c':
+    case 'c':;
+        history <<"death like a really old man";
         death_old_age();
         Sleep (3000);
-        mapp();
+        mapp();;
         break;
 
     case 'd':
+        history << "death like a old happy man";
         death_old_age();
         Sleep (3000);
         mapp();
         break;
 
     case 'e':
+        history << "death from heart attak, but come on, you just love cute kitties too much";
         death_pretty_kitties();
         Sleep (3000);
         mapp();
         break;
 
     case 'f':
+        history << "death like a old gold man";
         death_arabic_sheikh();
         Sleep (3000);
         mapp();
         break;
 
     case 'g':
+        history << "death like a big sigma hero";
         death_spaceman();
         Sleep (3000);
         mapp();
         break;
 
     case 'h':
+        history << "Are you really die?";
         death_uzhond();
         Sleep(3000);
         cout << " ETERNAL WAITING " << endl;
@@ -489,24 +513,28 @@ int main()
         break;
 
     case 'i':
+        history << "death, but peace";
         death_librian();
         Sleep(3000);
         mapp();
         break;
 
     case 'j':
+        history << "Take your adventure with the moles";
         death_historical();
         Sleep(3000);
         mapp();
         break;
 
     case 'k':
+        history << "XD" << endl << "I do not envy";
         death_0_kidneys();
         bootle();
 
         break;
 
     case 'l':
+        history << " Do you like gypsies? Well. Now you will, troll of dentist's world ";
         death_dantist();
         Sleep(3000);
         mapp();
